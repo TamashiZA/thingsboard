@@ -22,9 +22,9 @@ import mdiIconSet from '../svg/mdi.svg';
 
 /* eslint-enable import/no-unresolved, import/default */
 
-const PRIMARY_BACKGROUND_COLOR = "#305680";//#2856b6";//"#3f51b5";
-const SECONDARY_BACKGROUND_COLOR = "#527dad";
-const HUE3_COLOR = "#a7c1de";
+const PRIMARY_BACKGROUND_COLOR = "#e3001c";//"#305680";//#2856b6";//"#3f51b5";
+const SECONDARY_BACKGROUND_COLOR = "#ff6d7f";//"#527dad";
+const HUE3_COLOR = "#ff8190";//"#a7c1de";
 
 /*@ngInject*/
 export default function AppConfig($provide,
@@ -97,6 +97,25 @@ export default function AppConfig($provide,
             .backgroundPalette('tb-primary')
             .dark();
     }
+       function redGrayTheme() {
+            var tbPrimaryPalette = $mdThemingProvider.extendPalette('red-grey');
+            var tbAccentPalette = $mdThemingProvider.extendPalette('orange', {
+                'contrastDefaultColor': 'light'
+            });
+
+            $mdThemingProvider.definePalette('tb-primary', tbPrimaryPalette);
+            $mdThemingProvider.definePalette('tb-accent', tbAccentPalette);
+
+            $mdThemingProvider.theme('default')
+                .primaryPalette('tb-primary')
+                .accentPalette('tb-accent');
+
+            $mdThemingProvider.theme('tb-dark')
+                .primaryPalette('tb-primary')
+                .accentPalette('tb-accent')
+                .backgroundPalette('tb-primary')
+                .dark();
+        }
 
     function indigoTheme() {
         var tbPrimaryPalette = $mdThemingProvider.extendPalette('indigo', {
@@ -138,10 +157,17 @@ export default function AppConfig($provide,
 
         if (theme === 'blueGray') {
             blueGrayTheme();
-        } else {
-            indigoTheme();
-        }
+        } else
+        {
+            if (theme === 'redGray') {
 
+            redGrayTheme();
+            }
+            else
+            {
+                indigoTheme();
+            }
+        }
         $mdThemingProvider.setDefaultTheme('default');
         //$mdThemingProvider.alwaysWatchTheme(true);
     }

@@ -24,8 +24,8 @@ topic_pub='v1/devices/me/telemetry'
 
 client = mqtt.Client()
 
-client.username_pw_set("TEST_TOKEN")
-client.connect('127.0.0.1', 1883, 1)
+client.username_pw_set("iSZy4l6tRpS4CfisTYYo")
+client.connect('10.0.0.99', 1883, 1)
 
 for i in range(5):
     x = random.randrange(20, 100)

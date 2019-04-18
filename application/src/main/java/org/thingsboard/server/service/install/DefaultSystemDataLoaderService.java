@@ -86,7 +86,7 @@ public class DefaultSystemDataLoaderService implements SystemDataLoaderService {
 
     @Override
     public void createSysAdmin() {
-        createUser(Authority.SYS_ADMIN, null, null, "sysadmin@germ.iot", "sysadmin");
+        createUser(Authority.SYS_ADMIN, null, null, "sysadmin@tamashi.co.za", "sysadmin");
     }
 
     @Override
@@ -120,7 +120,7 @@ public class DefaultSystemDataLoaderService implements SystemDataLoaderService {
         demoTenant.setTitle("Tenant");
         demoTenant = tenantService.saveTenant(demoTenant);
         installScripts.createDefaultRuleChains(demoTenant.getId());
-        createUser(Authority.TENANT_ADMIN, demoTenant.getId(), null, "tenant@germ.iot", "tenant");
+        createUser(Authority.TENANT_ADMIN, demoTenant.getId(), null, "tenant@tamashi.co.za", "tenant");
 
         Customer customerA = new Customer();
         customerA.setTenantId(demoTenant.getId());
@@ -134,10 +134,10 @@ public class DefaultSystemDataLoaderService implements SystemDataLoaderService {
         customerC.setTenantId(demoTenant.getId());
         customerC.setTitle("Customer C");
         customerC = customerService.saveCustomer(customerC);
-        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerA.getId(), "customer@germ.iot", CUSTOMER_CRED);
-        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerA.getId(), "customerA@germ.iotg", CUSTOMER_CRED);
-        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerB.getId(), "customerB@germ.iot", CUSTOMER_CRED);
-        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerC.getId(), "customerC@germ.iot", CUSTOMER_CRED);
+        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerA.getId(), "customer@tamashi.co.za", CUSTOMER_CRED);
+        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerA.getId(), "customerA@tamashi.co.zag", CUSTOMER_CRED);
+        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerB.getId(), "customerB@tamashi.co.za", CUSTOMER_CRED);
+        createUser(Authority.CUSTOMER_USER, demoTenant.getId(), customerC.getId(), "customerC@tamashi.co.za", CUSTOMER_CRED);
 
         createDevice(demoTenant.getId(), customerA.getId(), DEFAULT_DEVICE_TYPE, "Test Device A1", "A1_TEST_TOKEN", null);
         createDevice(demoTenant.getId(), customerA.getId(), DEFAULT_DEVICE_TYPE, "Test Device A2", "A2_TEST_TOKEN", null);

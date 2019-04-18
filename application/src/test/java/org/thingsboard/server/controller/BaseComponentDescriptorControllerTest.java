@@ -50,7 +50,7 @@ public abstract class BaseComponentDescriptorControllerTest extends AbstractCont
         tenantAdmin = new User();
         tenantAdmin.setAuthority(Authority.TENANT_ADMIN);
         tenantAdmin.setTenantId(savedTenant.getId());
-        tenantAdmin.setEmail("tenant2@germ.iot");
+        tenantAdmin.setEmail("tenant2@tamashi.co.za");
         tenantAdmin.setFirstName("Joe");
         tenantAdmin.setLastName("Downs");
 

@@ -41,7 +41,7 @@ public class HttpClientTest extends AbstractContainerTest {
 
     @Test
     public void telemetryUpload() throws Exception {
-        restClient.login("tenant@germ.iot", "tenant");
+        restClient.login("tenant@tamashi.co.za", "tenant");
 
         Device device = createDevice("http_");
         DeviceCredentials deviceCredentials = restClient.getCredentials(device.getId());
@@ -69,7 +69,7 @@ public class HttpClientTest extends AbstractContainerTest {
 
     @Test
     public void getAttributes() throws Exception {
-        restClient.login("tenant@germ.iot", "tenant");
+        restClient.login("tenant@tamashi.co.za", "tenant");
         TB_TOKEN = restClient.getToken();
 
         Device device = createDevice("test");

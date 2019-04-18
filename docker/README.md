@@ -40,12 +40,12 @@ You should see ThingsBoard login page.
 
 Use the following default credentials:
 
-- **System Administrator**: sysadmin@germ.iot / sysadmin
+- **System Administrator**: sysadmin@tamashi.co.za / sysadmin
 
 If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
 
-- **Tenant Administrator**: tenant@germ.iot / tenant
-- **Customer User**: customer@germ.iot / customer
+- **Tenant Administrator**: tenant@tamashi.co.za / tenant
+- **Customer User**: customer@tamashi.co.za / customer
 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:

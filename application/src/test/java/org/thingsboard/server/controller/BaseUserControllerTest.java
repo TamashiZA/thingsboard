@@ -53,7 +53,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         Tenant savedTenant = doPost("/api/tenant", tenant, Tenant.class);
         Assert.assertNotNull(savedTenant);
         
-        String email = "tenant2@germ.iot";
+        String email = "tenant2@tamashi.co.za";
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
         user.setTenantId(savedTenant.getId());
@@ -112,7 +112,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         Tenant savedTenant = doPost("/api/tenant", tenant, Tenant.class);
         Assert.assertNotNull(savedTenant);
         
-        String email = "tenant2@germ.iot";
+        String email = "tenant2@tamashi.co.za";
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
         user.setTenantId(savedTenant.getId());
@@ -169,7 +169,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         Tenant savedTenant = doPost("/api/tenant", tenant, Tenant.class);
         Assert.assertNotNull(savedTenant);
         
-        String email = "tenant2@germ.iot";
+        String email = "tenant2@tamashi.co.za";
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
         user.setTenantId(savedTenant.getId());
@@ -265,7 +265,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
-        user.setEmail("tenant2@germ.iot");
+        user.setEmail("tenant2@tamashi.co.za");
         user.setFirstName("Joe");
         user.setLastName("Downs");
         
@@ -283,7 +283,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         Tenant savedTenant = doPost("/api/tenant", tenant, Tenant.class);
         Assert.assertNotNull(savedTenant);
         
-        String email = "tenant2@germ.iot";
+        String email = "tenant2@tamashi.co.za";
         User user = new User();
         user.setAuthority(Authority.TENANT_ADMIN);
         user.setTenantId(savedTenant.getId());
@@ -321,7 +321,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
             User user = new User();
             user.setAuthority(Authority.TENANT_ADMIN);
             user.setTenantId(tenantId);
-            user.setEmail("testTenant" + i + "@germ.iot");
+            user.setEmail("testTenant" + i + "@tamashi.co.za");
             tenantAdmins.add(doPost("/api/user", user, User.class));
         }
         
@@ -372,7 +372,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
             user.setAuthority(Authority.TENANT_ADMIN);
             user.setTenantId(tenantId);
             String suffix = RandomStringUtils.randomAlphanumeric((int)(5 + Math.random()*10));
-            String email = email1+suffix+ "@germ.iot";
+            String email = email1+suffix+ "@tamashi.co.za";
             email = i % 2 == 0 ? email.toLowerCase() : email.toUpperCase();
             user.setEmail(email);
             tenantAdminsEmail1.add(doPost("/api/user", user, User.class));
@@ -386,7 +386,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
             user.setAuthority(Authority.TENANT_ADMIN);
             user.setTenantId(tenantId);
             String suffix = RandomStringUtils.randomAlphanumeric((int)(5 + Math.random()*10));
-            String email = email2+suffix+ "@germ.iot";
+            String email = email2+suffix+ "@tamashi.co.za";
             email = i % 2 == 0 ? email.toLowerCase() : email.toUpperCase();
             user.setEmail(email);
             tenantAdminsEmail2.add(doPost("/api/user", user, User.class));
@@ -464,7 +464,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         User tenantAdmin = new User();
         tenantAdmin.setAuthority(Authority.TENANT_ADMIN);
         tenantAdmin.setTenantId(tenantId);
-        tenantAdmin.setEmail("tenant2@germ.iot");
+        tenantAdmin.setEmail("tenant2@tamashi.co.za");
         tenantAdmin.setFirstName("Joe");
         tenantAdmin.setLastName("Downs");
         
@@ -481,7 +481,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
             User user = new User();
             user.setAuthority(Authority.CUSTOMER_USER);
             user.setCustomerId(customerId);
-            user.setEmail("testCustomer" + i + "@germ.iot");
+            user.setEmail("testCustomer" + i + "@tamashi.co.za");
             customerUsers.add(doPost("/api/user", user, User.class));
         }
         
@@ -524,7 +524,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
         User tenantAdmin = new User();
         tenantAdmin.setAuthority(Authority.TENANT_ADMIN);
         tenantAdmin.setTenantId(tenantId);
-        tenantAdmin.setEmail("tenant2@germ.iot");
+        tenantAdmin.setEmail("tenant2@tamashi.co.za");
         tenantAdmin.setFirstName("Joe");
         tenantAdmin.setLastName("Downs");
         
@@ -544,7 +544,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
             user.setAuthority(Authority.CUSTOMER_USER);
             user.setCustomerId(customerId);
             String suffix = RandomStringUtils.randomAlphanumeric((int)(5 + Math.random()*10));
-            String email = email1+suffix+ "@germ.iot";
+            String email = email1+suffix+ "@tamashi.co.za";
             email = i % 2 == 0 ? email.toLowerCase() : email.toUpperCase();
             user.setEmail(email);
             customerUsersEmail1.add(doPost("/api/user", user, User.class));
@@ -558,7 +558,7 @@ public abstract class BaseUserControllerTest extends AbstractControllerTest {
             user.setAuthority(Authority.CUSTOMER_USER);
             user.setCustomerId(customerId);
             String suffix = RandomStringUtils.randomAlphanumeric((int)(5 + Math.random()*10));
-            String email = email2+suffix+ "@germ.iot";
+            String email = email2+suffix+ "@tamashi.co.za";
             email = i % 2 == 0 ? email.toLowerCase() : email.toUpperCase();
             user.setEmail(email);
             customerUsersEmail2.add(doPost("/api/user", user, User.class));
